@@ -39,7 +39,6 @@ func is_open() -> bool:
 func start() -> void:
 	is_running = true
 	is_paused = false
-	_process_time()
 
 
 func pause() -> void:
@@ -68,12 +67,6 @@ func advance_minutes(amount: float) -> void:
 	time_updated.emit(get_game_time())
 
 
-func _process_time() -> void:
-	while is_running:
-		if not is_paused:
-			advance_minutes(hours_per_minute * time_scale)
-		await get_tree().create_timer(1.0 / 60.0).timeout
-
-
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	if is_running and not is_paused:
+		advance_minutes(hours_per_minute * time_scale * delta)

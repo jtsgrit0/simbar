@@ -72,7 +72,7 @@ func attach_node(customer_id: int, node: Node2D) -> void:
 
 
 func _process_orders(delta: float) -> void:
-	for id in active_customers.duplicate_keys():
+	for id in active_customers.keys():
 		var customer = active_customers[id]
 		if customer.state == "waiting":
 			customer.patience -= delta

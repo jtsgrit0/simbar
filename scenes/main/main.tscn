@@ -1,8 +1,13 @@
 [gd_scene load_steps=1 format=4]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/music_system.gd" id="3"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/systems/time_system.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/systems/game_state.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/band_manager.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/concert_manager.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/pub_manager.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/music_system.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1")
@@ -29,21 +34,26 @@ offset_bottom = 280.0
 color = Color(0.306, 0.204, 0.18, 1)
 
 [node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("2")
 
 [node name="GameState" type="Node" parent="."]
+script = ExtResource("3")
 
 [node name="BandManager" type="Node" parent="."]
+script = ExtResource("4")
 
 [node name="ConcertManager" type="Node" parent="."]
+script = ExtResource("5")
 
 [node name="PubManager" type="Node" parent="."]
+script = ExtResource("6")
 
 [node name="MusicSystem" type="Node" parent="."]
-script = ExtResource("3")
+script = ExtResource("7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicSystem"]
 
 [node name="StreamPlayer" type="AudioStreamPlayer" parent="MusicSystem"]
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("2")
+script = ExtResource("8")

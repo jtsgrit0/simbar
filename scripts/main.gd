@@ -4,13 +4,13 @@ class_name Main
 signal game_saved
 signal game_loaded
 
-@onready var time_system = $TimeSystem
-@onready var game_state = $GameState
-@onready var band_manager = $BandManager
-@onready var concert_manager = $ConcertManager
-@onready var pub_manager = $PubManager
-@onready var music_system = $MusicSystem
-@onready var ui = $UI
+@onready var time_system = get_node_or_null("TimeSystem") as TimeSystem
+@onready var game_state = get_node_or_null("GameState") as GameState
+@onready var band_manager = get_node_or_null("BandManager") as BandManager
+@onready var concert_manager = get_node_or_null("ConcertManager") as ConcertManager
+@onready var pub_manager = get_node_or_null("PubManager") as PubManager
+@onready var music_system = get_node_or_null("MusicSystem") as MusicSystem
+@onready var ui = get_node_or_null("UI") as CanvasLayer
 
 var save_path: String = "user://savegame.json"
 

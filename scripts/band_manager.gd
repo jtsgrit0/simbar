@@ -10,7 +10,7 @@ var available_bands: Array[Band] = []
 
 
 func _ready() -> void:
-	game_state = get_node_or_null("/root/Main/GameState")
+	game_state = get_node_or_null("/root/Main/GameState") as GameState
 	_refresh_bands()
 
 

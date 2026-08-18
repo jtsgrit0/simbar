@@ -17,9 +17,9 @@ var concert_duration: float = 60.0
 
 
 func _ready() -> void:
-	game_state = get_node_or_null("/root/Main/GameState")
-	time_system = get_node_or_null("/root/Main/TimeSystem")
-	band_manager = get_node_or_null("/root/Main/BandManager")
+	game_state = get_node_or_null("/root/Main/GameState") as GameState
+	time_system = get_node_or_null("/root/Main/TimeSystem") as TimeSystem
+	band_manager = get_node_or_null("/root/Main/BandManager") as BandManager
 	if time_system:
 		time_system.hour_passed.connect(_on_hour_passed)
 

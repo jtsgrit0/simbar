@@ -21,10 +21,10 @@ var max_spawn_rate: float = 1.0
 
 
 func _ready() -> void:
-	time_system = get_node_or_null("/root/Main/TimeSystem")
-	game_state = get_node_or_null("/root/Main/GameState")
-	band_manager = get_node_or_null("/root/Main/BandManager")
-	concert_manager = get_node_or_null("/root/Main/ConcertManager")
+	time_system = get_node_or_null("/root/Main/TimeSystem") as TimeSystem
+	game_state = get_node_or_null("/root/Main/GameState") as GameState
+	band_manager = get_node_or_null("/root/Main/BandManager") as BandManager
+	concert_manager = get_node_or_null("/root/Main/ConcertManager") as ConcertManager
 
 
 func _process(delta: float) -> void:

@@ -36,11 +36,11 @@ var discovery_timer: float = 0.0
 
 func _ready() -> void:
 	_create_ui()
-	time_system = get_node_or_null("/root/Main/TimeSystem")
-	game_state = get_node_or_null("/root/Main/GameState")
-	concert_manager = get_node_or_null("/root/Main/ConcertManager")
-	pub_manager = get_node_or_null("/root/Main/PubManager")
-	music_system = get_node_or_null("/root/Main/MusicSystem")
+	time_system = get_node_or_null("/root/Main/TimeSystem") as TimeSystem
+	game_state = get_node_or_null("/root/Main/GameState") as GameState
+	concert_manager = get_node_or_null("/root/Main/ConcertManager") as ConcertManager
+	pub_manager = get_node_or_null("/root/Main/PubManager") as PubManager
+	music_system = get_node_or_null("/root/Main/MusicSystem") as MusicSystem
 	if time_system:
 		time_system.time_updated.connect(_update_time)
 	if game_state:

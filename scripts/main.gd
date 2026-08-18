@@ -4,13 +4,13 @@ class_name Main
 signal game_saved
 signal game_loaded
 
-@onready var time_system: TimeSystem = $TimeSystem
-@onready var game_state: GameState = $GameState
-@onready var band_manager: BandManager = $BandManager
-@onready var concert_manager: ConcertManager = $ConcertManager
-@onready var pub_manager: PubManager = $PubManager
-@onready var music_system: MusicSystem = $MusicSystem
-@onready var ui: CanvasLayer = $UI
+@onready var time_system = $TimeSystem
+@onready var game_state = $GameState
+@onready var band_manager = $BandManager
+@onready var concert_manager = $ConcertManager
+@onready var pub_manager = $PubManager
+@onready var music_system = $MusicSystem
+@onready var ui = $UI
 
 var save_path: String = "user://savegame.json"
 

@@ -12,11 +12,11 @@ var menu_button: Button
 var booking_button: Button
 var concert_indicator: ColorRect
 
-var time_system: TimeSystem
-var game_state: GameState
-var concert_manager: ConcertManager
-var pub_manager: PubManager
-var music_system: MusicSystem
+var time_system
+var game_state
+var concert_manager
+var pub_manager
+var music_system
 
 var menu_open: bool = false
 var booking_open: bool = false

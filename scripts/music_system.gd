@@ -10,9 +10,9 @@ signal streaming_progress(progress: float, song: Song)
 @onready var player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var stream_player: AudioStreamPlayer = $StreamPlayer
 
-var game_state: GameState
-var time_system: TimeSystem
-var band_manager: BandManager
+var game_state
+var time_system
+var band_manager
 
 var playlist: Array[Song] = []
 var current_song: Song = null

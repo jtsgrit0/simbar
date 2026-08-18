@@ -5,7 +5,7 @@ signal bands_updated
 signal band_booked(band: Band)
 signal band_unbooked(band_id: String)
 
-var game_state: GameState
+var game_state
 var available_bands: Array[Band] = []
 
 

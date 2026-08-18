@@ -7,10 +7,10 @@ signal concert_started(band_name: String)
 signal concert_ended(band_name: String, success: bool)
 signal customer_left(customer_id: int)
 
-var time_system: TimeSystem
-var game_state: GameState
-var band_manager: BandManager
-var concert_manager: ConcertManager
+var time_system
+var game_state
+var band_manager
+var concert_manager
 
 var active_customers: Dictionary = {}
 var customer_id_counter: int = 0

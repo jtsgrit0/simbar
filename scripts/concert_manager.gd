@@ -6,9 +6,9 @@ signal concert_starting(band: Band)
 signal concert_finished(band: Band, success: bool, revenue: int, attendance: int)
 signal no_concert_today
 
-var game_state: GameState
-var time_system: TimeSystem
-var band_manager: BandManager
+var game_state
+var time_system
+var band_manager
 
 var scheduled_concert: Dictionary = {}
 var is_concert_active: bool = false

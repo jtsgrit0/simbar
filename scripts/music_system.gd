@@ -30,7 +30,7 @@ const BASE_STREAM_RPM = 1.0
 
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_ALWAYS
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_refresh_playlist()
 	time_system = get_node_or_null("/root/Main/TimeSystem")
 	game_state = get_node_or_null("/root/Main/GameState")
@@ -180,11 +180,12 @@ func _apply_stream_audio(song: Song) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_select"):
-		if is_streaming:
-			if player.playing or stream_player.playing:
-				pause_playback()
-			else:
-				resume_playback()
-		elif not playlist.is_empty():
-			stream_playlist()
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_SPACE or event.keycode == KEY_K:
+			if is_streaming:
+				if player.playing or stream_player.playing:
+					pause_playback()
+				else:
+					resume_playback()
+			elif not playlist.is_empty():
+				stream_playlist()

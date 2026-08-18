@@ -1,0 +1,16 @@
+# Godot 4.x ignores
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+.mono/
+data_*/
+tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

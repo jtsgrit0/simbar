@@ -6,6 +6,7 @@ export_presets.cfg
 .mono/
 data_*/
 tmp/
+*.uid
 
 # OS files
 .DS_Store

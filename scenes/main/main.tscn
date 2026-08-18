@@ -12,21 +12,21 @@ script = ExtResource("1")
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
 offset_right = 480.0
 offset_bottom = 720.0
-color = Color("#3E2723")
+color = Color(0.239, 0.153, 0.137, 1)
 
 [node name="BarCounter" type="ColorRect" parent="CanvasLayer"]
 offset_left = 40.0
 offset_top = 300.0
 offset_right = 440.0
 offset_bottom = 450.0
-color = Color("#5D4037")
+color = Color(0.365, 0.251, 0.216, 1)
 
 [node name="StageArea" type="ColorRect" parent="CanvasLayer"]
 offset_left = 160.0
 offset_top = 150.0
 offset_right = 320.0
 offset_bottom = 280.0
-color = Color("#4E342E")
+color = Color(0.306, 0.204, 0.18, 1)
 
 [node name="TimeSystem" type="Node" parent="."]
 

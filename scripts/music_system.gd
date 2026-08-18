@@ -31,10 +31,10 @@ const BASE_STREAM_RPM = 1.0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_refresh_playlist()
 	time_system = get_node_or_null("/root/Main/TimeSystem")
 	game_state = get_node_or_null("/root/Main/GameState")
 	band_manager = get_node_or_null("/root/Main/BandManager")
+	_refresh_playlist()
 	if time_system:
 		time_system.day_changed.connect(_on_day_changed)
 
@@ -53,6 +53,8 @@ func _on_day_changed(new_day: int) -> void:
 
 
 func _refresh_playlist() -> void:
+	if not game_state:
+		return
 	var unlocked = SongDatabase.get_unlocked_songs(game_state.day)
 	playlist.clear()
 	for s in unlocked:

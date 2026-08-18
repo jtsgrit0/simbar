@@ -9,6 +9,7 @@ signal game_loaded
 @onready var band_manager: BandManager = $BandManager
 @onready var concert_manager: ConcertManager = $ConcertManager
 @onready var pub_manager: PubManager = $PubManager
+@onready var music_system: MusicSystem = $MusicSystem
 @onready var ui: CanvasLayer = $UI
 
 var save_path: String = "user://savegame.json"
@@ -27,6 +28,9 @@ func _connect_signals() -> void:
 	pub_manager.customer_served.connect(_on_customer_served)
 	concert_manager.concert_starting.connect(_on_concert_starting)
 	concert_manager.concert_finished.connect(_on_concert_finished)
+	music_system.song_started.connect(_on_song_started)
+	music_system.song_finished.connect(_on_song_finished)
+	music_system.discovery_unlocked.connect(_on_song_discovered)
 	get_tree().create_timer(5.0).timeout.connect(_auto_save)
 
 
@@ -78,6 +82,7 @@ func _on_concert_finished(band: Band, success: bool, revenue: int, attendance: i
 		game_state.reputation -= 0.2
 	game_state.reputation = clamp(game_state.reputation, 0.0, 10.0)
 	game_state.update_stats("total_concerts", 1)
+	music_system.try_discover_from_concert(band)
 
 
 func _auto_save() -> void:
@@ -117,6 +122,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_save_game()
 		get_tree().quit()
+
+
+func _on_song_started(song: Song) -> void:
+	pass
+
+
+func _on_song_finished(song: Song) -> void:
+	pass
+
+
+func _on_song_discovered(song: Song) -> void:
+	pass
 
 
 func _process(delta: float) -> void:

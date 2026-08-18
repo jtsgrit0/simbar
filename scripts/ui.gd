@@ -129,6 +129,46 @@ func _create_ui() -> void:
 	_create_discovery_toast()
 
 
+func _create_menu_panel() -> void:
+	menu_panel = PanelContainer.new()
+	menu_panel.position = Vector2(10, 70)
+	menu_panel.size = Vector2(200, 200)
+	menu_panel.visible = false
+	add_child(menu_panel)
+
+	var vbox = VBoxContainer.new()
+	menu_panel.add_child(vbox)
+
+	var title = Label.new()
+	title.text = "Menu"
+	vbox.add_child(title)
+
+	var save_btn = Button.new()
+	save_btn.text = "Save Game"
+	save_btn.pressed.connect(_on_save)
+	vbox.add_child(save_btn)
+
+	var reset_btn = Button.new()
+	reset_btn.text = "New Game"
+	reset_btn.pressed.connect(_on_reset)
+	vbox.add_child(reset_btn)
+
+
+func _create_booking_panel() -> void:
+	booking_panel = PanelContainer.new()
+	booking_panel.position = Vector2(270, 70)
+	booking_panel.size = Vector2(200, 200)
+	booking_panel.visible = false
+	add_child(booking_panel)
+
+	var vbox = VBoxContainer.new()
+	booking_panel.add_child(vbox)
+
+	var title = Label.new()
+	title.text = "Book Band"
+	vbox.add_child(title)
+
+
 func _create_music_panel() -> void:
 	music_panel = PanelContainer.new()
 	music_panel.position = Vector2(10, 610)

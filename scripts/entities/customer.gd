@@ -36,7 +36,7 @@ func _create_visuals() -> void:
 
 	drink_icon = ColorRect.new()
 	drink_icon.size = Vector2(10, 14)
-	drink_icon.color = drink.icon_color
+	drink_icon.color = drink.icon_color if drink else Color.GRAY
 	drink_icon.position = Vector2(-5, -56)
 	add_child(drink_icon)
 

@@ -46,6 +46,8 @@ func _on_customer_spawned(customer_data: Dictionary) -> void:
 	customer.drink = customer_data["drink"]
 	customer.max_patience = customer_data["max_patience"]
 	customer.current_patience = customer_data["patience"]
+	if customer.drink_icon:
+		customer.drink_icon.color = customer.drink.icon_color if customer.drink else Color.GRAY
 	customer.clicked.connect(_on_customer_clicked)
 	var spawn_x = randf_range(80, 400)
 	var spawn_y = randf_range(300, 500)

@@ -4,18 +4,25 @@ class_name Main
 signal game_saved
 signal game_loaded
 
-@onready var time_system = get_node_or_null("TimeSystem") as TimeSystem
-@onready var game_state = get_node_or_null("GameState") as GameState
-@onready var band_manager = get_node_or_null("BandManager") as BandManager
-@onready var concert_manager = get_node_or_null("ConcertManager") as ConcertManager
-@onready var pub_manager = get_node_or_null("PubManager") as PubManager
-@onready var music_system = get_node_or_null("MusicSystem") as MusicSystem
-@onready var ui = get_node_or_null("UI") as CanvasLayer
+var time_system
+var game_state
+var band_manager
+var concert_manager
+var pub_manager
+var music_system
+var ui
 
 var save_path: String = "user://savegame.json"
 
 
 func _ready() -> void:
+	time_system = get_node("TimeSystem")
+	game_state = get_node("GameState")
+	band_manager = get_node("BandManager")
+	concert_manager = get_node("ConcertManager")
+	pub_manager = get_node("PubManager")
+	music_system = get_node("MusicSystem")
+	ui = get_node("UI")
 	_load_game()
 	_connect_signals()
 	time_system.start()
